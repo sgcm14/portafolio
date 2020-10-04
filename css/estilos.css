@@ -221,16 +221,17 @@ a {	text-decoration: none; }
 
 /* ----- ----- Referencias ----- ----- */
 
-	.reference{
-		display: grid;
-		grid-template-rows: repeat(2, 1fr);
-		grid-template-columns: 730px;
-		align-items: center;
-		row-gap: 1em;
+.reference{
+	display: flex;
+  /*grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: 730px; */
+	max-width: 730px;
+	align-items: center;
+	row-gap: 1em;
 	}
-	.img-reference{
-		width: 100%;
-	}
+.img-reference{
+	width: 100%;
+}
 	
 
 /* ----- ----- Redes Sociales ----- ----- */

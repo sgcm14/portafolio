@@ -13,6 +13,11 @@ $(document).ready(function(){
 		numeroSlides: $('#info').children('.slide').length,
 		posicion: 1
 	}
+	// Objeto de Reference
+	var refe = {
+		padre: $('#reference'),
+		numeroSlides: $('#reference').children('.img-reference').length,
+	}
 
 	// Establecemos que el primer slide aparecera desplazado
 	banner.padre.children('.slide').first().css({
@@ -38,6 +43,12 @@ $(document).ready(function(){
 			'height': alto + 'px'
 		});
 	}
+	var altoReference = function(){
+		var alto = refe.padre.children('.img-reference').outerHeight();
+		refe.padre.animate({
+			'height': alto + 'px'
+		});
+	}
 
 	// Establecemos que el #contenedor tenga el 100% del alto de la pagina. 
 	// Para despues centrarlo verticalente con flexbox.
@@ -55,13 +66,14 @@ $(document).ready(function(){
 	altoBanner();
 	altoContenedor();
 	altoInfo();
-
+	altoReference();
 	// Si cambiamos el tamaño de la pantalla se
 	// ejecuta esta funcion para saber el nuevo
 	// tamaño del elemento padre
 	$(window).resize(function(){
 		altoBanner();
 		altoContenedor();
+		altoReference();
 	});
 
 	// Agregamos un puntito por cada slide que tengamos
